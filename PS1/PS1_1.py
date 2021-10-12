@@ -7,9 +7,10 @@ Created on Sat Oct  9 10:03:04 2021
 import random 
 
 # Generating three random ints: a, b, c that are between 0 and 100
-a = random.randint(0, 100)
-b = random.randint(0, 100)
-c = random.randint(0, 100)
+a = random.randint(0, 101)
+b = random.randint(0, 101)
+c = random.randint(0, 101)
+print('a,b,c: ',a,b,c)
 
 # Generating a function Print_values that sorts a, b, c from largest to smallest
 def Print_values(a,b,c):
@@ -31,4 +32,5 @@ def Print_values(a,b,c):
             print(c,b,a)
 
 # Used Print_values for randomly generated a, b, c
+print('The output is following:')
 Print_values(a,b,c)

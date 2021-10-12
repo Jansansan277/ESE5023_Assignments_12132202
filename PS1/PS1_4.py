@@ -9,8 +9,6 @@ import random
 
 #随机获取一个[1,100]之间的整数 x
 x = random.randint(1,101)
-print(x)
-
 
 #定义一个函数，获取从 1 RMB到得到 x RMB的最少moves的次数
 #分析：对于x来说，除以2会比减1更快的到达1
@@ -28,5 +26,5 @@ def Least_moves(x):
     return count
 
 least_moves = Least_moves(x)
-print(least_moves)
-    
+print(x,'RMB requires ',least_moves,'least moves')
+print('Least_moves(2) = ',Least_moves(2),';','Least_moves(5) = ', Least_moves(5))
