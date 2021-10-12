@@ -31,11 +31,8 @@ def matrix_multiplication(A=[[]],B=[[]]): #A，B默认值为空的二维array
                 Mij = 0 #用来存储 M矩阵第i行第j列结果
                 for k in range(len(A[0])): # 将A的第i行元素和B的第j行元素对应相乘后累加求和
                     Mij = Mij + A[i][k] * B[k][j]
-                    k = k + 1
                 R.append(Mij) #存储累加求和后的结果到第i行列表中
-                j = j + 1
             M.append(R) #将第i行存入M矩阵中
-            i = i + 1
     else:
         print('Sorry, the matrics you input cannot be multiplicated!')
     return M
@@ -53,7 +50,7 @@ M2 = np.matrix(M2)
 M_validation = M1*M2
 print(M_validation)
 print(M==M_validation)
-'''       
+'''   
         
 
 
