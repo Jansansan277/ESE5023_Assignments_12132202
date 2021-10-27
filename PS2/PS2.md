@@ -70,3 +70,29 @@ Name: CountEq, dtype: int64
 [157 rows x 4 columns]
 ```
 
+
+
+
+
+
+
+
+
+#### 3.Explore a data set
+
+```python
+# 3.2 选取了SO2在北京各地的统计平均值为变量，时间为2021年10月23日一天之内的各小时，结果如下：
+```
+
+![image-20211027182757658](C:/Users/Administrator/blog/image/PS2/image-20211027182757658.png)
+
+```python
+# 3.3 选取了SO2在北京各地的统计平均值为变量,做了以下的统计分析，结果如下：
+
+Mean of SO2 average is  2.915966386554622
+Max of SO2 average is  4.6
+Min of SO2 average is  2.057142857142857
+Var of SO2 average is  0.5212725090036013
+Quantile of SO2 average is  2.6285714285714286
+```
+
