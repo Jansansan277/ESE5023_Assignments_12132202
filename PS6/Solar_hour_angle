@@ -1,0 +1,28 @@
+module Solar_hour_angle
+    implicit none
+    real, parameter:: pi = 3.1415926536
+
+    contains
+
+    subroutine Solar_hour_angle(yy,mm,dd, hour, minute, del_TZ, Lon, sol_hur_angle)
+        implicit none
+        integer:: mm, dd, hour, minute, del_TZ, days=0, i
+        real(8):: Lon, gamma, EoT=0.0, Offset, Result, hours=0.0
+        integer::dayofmonth(12)=[31,28,31,30,31,30,31,31,30,31,30,31]
+
+        if(((MOD(yy,4)==0).and.(MOD(yy,100)/=0)).or.(mod(yy,400)==0)) then
+          dayofmonth(2)=29
+        end if
+        days=sum(dayofmonth(1:mm-1))+dd
+        print*,days
+
+        hours = (minute / 60.0) + hour
+        gamma = (2 * pi / 365.0) * (days - 1 + (hours - 12.0) / 24.0)
+        EoT   = 229.18 * (0.000075 + (0.001868 * cos(gamma)) - (0.032077 * sin(gamma)) - ((0.014615 * cos(2 * gamma)) + (0.040849 * sin(2 * gamma)))
+
+        Offset = EoT + 4 * (Lon - (15 * del_TZ) )
+        hours = hours + (Offset / 60.0)
+        sol_hur_angle = 15.0 * (hours - 12.0)
+    end subroutine solarhour_angle
+
+end module Solar_hour_angle
